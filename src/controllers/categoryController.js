@@ -1,8 +1,6 @@
 import { getAllCategories } from "../services/categoryService.js";
 
-/**
- * GET /api/categories
- */
+
 export const getCategories = async (req, res) => {
   try {
     const categories = await getAllCategories();
@@ -19,4 +17,3 @@ export const getCategories = async (req, res) => {
     });
   }
 };
-

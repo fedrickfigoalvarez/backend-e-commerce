@@ -41,4 +41,3 @@ export const getProductById = async (id) => {
   if (error) throw error;
   return data;
 };
-
