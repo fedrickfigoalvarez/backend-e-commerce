@@ -1,12 +1,14 @@
 import { Router } from "express";
 import { getProducts, getProduct } from "../controllers/productController.js";
+import {
+  validateIdParam,
+  validateCategoryIdQuery,
+} from "../middleware/validate.js";
 
 const router = Router();
 
-// GET /api/products
-router.get("/", getProducts);
+router.get("/", validateCategoryIdQuery, getProducts);
 
-// GET /api/products/:id
-router.get("/:id", getProduct);
+router.get("/:id", validateIdParam, getProduct);
 
 export default router;
